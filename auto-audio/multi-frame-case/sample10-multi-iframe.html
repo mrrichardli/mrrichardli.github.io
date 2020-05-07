@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This is first iframe</p>
+<br/>
+<iframe src="sample10.html" width="300" height="300">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+<br/>
+<p>The main frame</p>
+<audio controls="controls" id="a1">
+  <source src="https://res.imtt.qq.com/qqbrowser_x5/zhengyuli/file/cunzai.mp3" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
+<script>
+function playAudio() {
+    var s = window.setTimeout(function(){
+      document.getElementById("a1").play();
+    }, 1001);
+}
+</script>
+
+<button onclick="playAudio()">Create Auto Audio</button>
+</body>
+</html>
