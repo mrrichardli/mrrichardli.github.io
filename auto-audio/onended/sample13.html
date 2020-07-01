@@ -18,7 +18,8 @@ function createAudio() {
         audio.onended = function(){
             audio.src = "https://res.imtt.qq.com/qqbrowser_x5/zhengyuli/file/cunzai.mp3";
             audio.play();
-        }
+        };
+        
         document.body.appendChild(audio);
 
         document.getElementById("p1").innerHTML="成功创建audio标签";
