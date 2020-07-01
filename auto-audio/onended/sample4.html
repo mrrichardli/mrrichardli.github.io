@@ -16,8 +16,8 @@ window.onload = function(){
         audio.setAttribute("src", "http://hao.haolingsheng.com/ring/000/995/12eb0d0cc49dbb986ccfb1aecb90ce1c.mp3");
 
         audio.onended = function(){
-            replayAudio.src = "https://res.imtt.qq.com/qqbrowser_x5/zhengyuli/file/cunzai.mp3";
-            replayAudio.play();
+            audio.src = "https://res.imtt.qq.com/qqbrowser_x5/zhengyuli/file/cunzai.mp3";
+            audio.play();
         };
 
         document.body.appendChild(audio);
