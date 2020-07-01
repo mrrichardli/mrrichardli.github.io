@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>sample12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+<p id="p1">未创建audio标签</p>
+<script>
+function createAudio() {
+    var s = window.setTimeout(function(){
+        var replayAudio = document.createElement("audio");
+
+        replayAudio.onended = function(){
+            replayAudio.src = "https://res.imtt.qq.com/qqbrowser_x5/zhengyuli/file/cunzai.mp3";
+            replayAudio.play();
+        }
+
+        replayAudio.setAttribute("id", "awardAudio");
+        replayAudio.setAttribute("autoplay", "autoplay");
+        replayAudio.setAttribute("src", "http://hao.haolingsheng.com/ring/000/995/12eb0d0cc49dbb986ccfb1aecb90ce1c.mp3");
+        document.body.appendChild(audio);
+
+        document.getElementById("p1").innerHTML="成功创建audio标签";
+    }, 1001);
+}
+</script>
+
+<button onclick="createAudio()">Create Auto Audio</button>
+
+</body>
+</html>
