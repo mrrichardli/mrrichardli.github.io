@@ -79,10 +79,15 @@
             <h1>Hello World! List Item11</h1>
         </p>
     </div>
-    <embed id="lastEmbedVideo" type="application/x-wechat-component"
-    embed-type="video" embed-id="19944" style="width: 100%; height: 100%; ">
-    <button onClick="openFullScreen();">打开全屏</button>
-    <button onClick="setBodyElemScrollTop();">设置Body标签scrollTop属性</button>
+    <div class="bodyView">
+        <embed id="lastEmbedVideo" type="application/x-wechat-component"
+            embed-type="video" embed-id="19944" style="width: 100%; height: 100%; ">
+    </div>
+    <div>
+
+        <button onClick="openFullScreen();" style="margin-left: 20px;">打开全屏</button>
+        <button onClick="setBodyElemScrollTop();">设置Body标签scrollTop属性</button>
+    </div>
 </div>
 <script>
     var lastEmbedVideoElem = document.getElementById("lastEmbedVideo");
