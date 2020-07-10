@@ -1,0 +1,118 @@
+<html lang="zh-CN">
+<head>
+    <style>
+        .listHdr{
+            position: fixed;
+            background-color:#d0e4fe;
+            opacity:0.7;
+            width: 100%;
+            height: 100px;
+        }
+
+        .bodyView{
+            background-color:aquamarine;
+            width: 100%;
+            height:300px;
+            border-style:solid;
+	        border-color:red;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="listHdr">
+    <h1>Header</h1>
+</div>
+<div>
+    <div class="bodyView">
+        <p>
+            <h1>Hello World! List Item1</h1>
+        </p>
+    </div>
+    <div class="bodyView">
+        <p>
+            <h1>Hello World! List Item2</h1>
+        </p>
+    </div>
+    <div class="bodyView">
+        <p>
+            <h1>Hello World! List Item3</h1>
+        </p>
+    </div>
+    <div class="bodyView">
+        <p>
+            <h1>Hello World! List Item4</h1>
+        </p>
+    </div>
+    <div id="lastEmbedVideo" class="bodyView">
+        <p>
+            <h1>Hello World! List Item5</h1>
+        </p>
+    </div>
+    <!-- <embed id="lastEmbedVideo" type="application/x-wechat-component"
+    embed-type="video" embed-id="19944" style="width: 100%; height: 100%; "> -->
+    <button onClick="openFullScreen();">打开全屏</button>
+    <button onClick="setBodyElemScrollTop();">设置Body标签scrollTop属性</button>
+</div>
+<script>
+    var lastEmbedVideoElem = document.getElementById("lastEmbedVideo");
+    var bodyElement = document.getElementsByTagName("body")[0];
+    function openFullScreen() {
+        //if (elem.requestFullscreen) {
+        var beforeFullScreenBodyTop = bodyElement.scrollTop;
+        console.log("nicolasli,beforeFullScreenBodyTop:"+beforeFullScreenBodyTop);  
+        console.log("nicolasli,requestFullscreen()");  
+        lastEmbedVideoElem.requestFullscreen();
+        var afterFullScreenBodyTop = bodyElement.scrollTop;
+        console.log("nicolasli,afterFullScreenBodyTop:"+afterFullScreenBodyTop);
+       
+        window.setTimeout(function(){
+           var bodyScrollTopInFullScreen10 = bodyElement.scrollTop;
+           console.log("nicolasli,after 10 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen10);
+       },10);
+
+        window.setTimeout(function(){
+           var bodyScrollTopInFullScreen100 = bodyElement.scrollTop;
+           console.log("nicolasli,after 100 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen100);
+       },100);
+
+        window.setTimeout(function(){
+           var bodyScrollTopInFullScreen1000 = bodyElement.scrollTop;
+           console.log("nicolasli,after 1000 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen1000);
+       },1000);
+
+       window.setTimeout(function(){
+           var bodyScrollTopInFullScreen2000 = bodyElement.scrollTop;
+           console.log("nicolasli,after 2000 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen2000);
+       },2000);
+
+       window.setTimeout(function(){
+            var beforeExitFullScreenBodyTop = bodyElement.scrollTop;
+            console.log("nicolasli,beforeExitFullScreenBodyTop:"+beforeExitFullScreenBodyTop);
+            console.log("nicolasli,document.exitFullScreen();");
+            document.exitFullscreen();
+            var afterExitFullScreenBodyTop = bodyElement.scrollTop;
+            console.log("nicolasli,afterExitFullScreenBodyTop:"+afterExitFullScreenBodyTop);
+        }, 3000);
+
+        //} else if (elem.mozRequestFullScreen) { /* Firefox */
+        //elem.mozRequestFullScreen();
+        //} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        //elem.webkitRequestFullscreen();
+        //} else if (elem.msRequestFullscreen) { /* IE/Edge */
+        //elem.msRequestFullscreen();
+        //}
+    }
+
+   
+    function setBodyElemScrollTop(){
+
+        var beforeSetBodyElemScrollTop = bodyElement.scrollTop;
+        console.log("nicolasli,beforeSetBodyElemScrollTop:"+beforeSetBodyElemScrollTop);
+        console.log("nicolasli,setHtmlElemScrollTop,bodyElement.scrollTop = 0;");
+        bodyElement.scrollTop = 0;
+        var afterSetBodyElemScrollTop = bodyElement.scrollTop;
+        console.log("nicolasli,afterSetBodyElemScrollTop:"+afterSetBodyElemScrollTop);
+    }
+</script>
+</body>

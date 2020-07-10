@@ -9338,6 +9338,36 @@
             lastEmbedVideoElem.requestFullscreen();
             var afterFullScreenBodyTop = bodyElement.scrollTop;
             console.log("nicolasli,afterFullScreenBodyTop:"+afterFullScreenBodyTop);
+           
+            window.setTimeout(function(){
+               var bodyScrollTopInFullScreen10 = bodyElement.scrollTop;
+               console.log("nicolasli,after 10 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen10);
+           },10);
+
+            window.setTimeout(function(){
+               var bodyScrollTopInFullScreen100 = bodyElement.scrollTop;
+               console.log("nicolasli,after 100 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen100);
+           },100);
+
+            window.setTimeout(function(){
+               var bodyScrollTopInFullScreen1000 = bodyElement.scrollTop;
+               console.log("nicolasli,after 1000 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen1000);
+           },1000);
+
+           window.setTimeout(function(){
+               var bodyScrollTopInFullScreen2000 = bodyElement.scrollTop;
+               console.log("nicolasli,after 2000 ms in FullScreen, bodyScrollTop:"+bodyScrollTopInFullScreen2000);
+           },2000);
+
+           window.setTimeout(function(){
+                var beforeExitFullScreenBodyTop = bodyElement.scrollTop;
+                console.log("nicolasli,beforeExitFullScreenBodyTop:"+beforeExitFullScreenBodyTop);
+                console.log("nicolasli,document.exitFullScreen();");
+                document.exitFullscreen();
+                var afterExitFullScreenBodyTop = bodyElement.scrollTop;
+                console.log("nicolasli,afterExitFullScreenBodyTop:"+afterExitFullScreenBodyTop);
+            }, 3000);
+
             //} else if (elem.mozRequestFullScreen) { /* Firefox */
             //elem.mozRequestFullScreen();
             //} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
