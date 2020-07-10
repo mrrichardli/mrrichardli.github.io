@@ -9324,20 +9324,20 @@
                 </wx-view>
             </wx-view>
             <button onClick="openFullScreen();">打开全屏</button>
-            <button onClick="setHtmlElemScrollTop();">设置Html标签scrollTop属性</button>
+            <button onClick="setBodyElemScrollTop();">设置Body标签scrollTop属性</button>
         </wx-view>
     </wx-view>
     <script>
         var lastEmbedVideoElem = document.getElementById("lastEmbedVideo");
-        var htmlElement = document.getElementsByTagName("html")[0];
-        function openFullscreen() {
+        var bodyElement = document.getElementsByTagName("body")[0];
+        function openFullScreen() {
             //if (elem.requestFullscreen) {
-            var beforeFullScreenHtmlTop = htmlElement.scrollTop;
-            console.log("nicolasli,beforeFullScreenHtmlTop:"+beforeFullScreenHtmlTop);  
+            var beforeFullScreenBodyTop = bodyElement.scrollTop;
+            console.log("nicolasli,beforeFullScreenBodyTop:"+beforeFullScreenBodyTop);  
             console.log("nicolasli,requestFullscreen()");  
-            elem.requestFullscreen();
-            var afterFullScreenHtmlTop = htmlElement.scrollTop;
-            console.log("nicolasli,afterFullScreenHtmlTop:"+afterFullScreenHtmlTop);
+            lastEmbedVideoElem.requestFullscreen();
+            var afterFullScreenBodyTop = bodyElement.scrollTop;
+            console.log("nicolasli,afterFullScreenBodyTop:"+afterFullScreenBodyTop);
             //} else if (elem.mozRequestFullScreen) { /* Firefox */
             //elem.mozRequestFullScreen();
             //} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
@@ -9348,14 +9348,14 @@
         }
 
        
-        function setHtmlElemScrollTop(){
+        function setBodyElemScrollTop(){
 
-            var beforeSetHtmlElemScrollTop = htmlElement.scrollTop;
-            console.log("nicolasli,beforeSetHtmlElemScrollTop:"+beforeSetHtmlElemScrollTop);
-            console.log("nicolasli,setHtmlElemScrollTop,htmlElement.scrollTop = 0;");
-            htmlElement.scrollTop = 0;
-            var afterSetHtmlElemScrollTop = htmlElement.scrollTop;
-            console.log("nicolasli,afterSetHtmlElemScrollTop:"+afterSetHtmlElemScrollTop);
+            var beforeSetBodyElemScrollTop = bodyElement.scrollTop;
+            console.log("nicolasli,beforeSetBodyElemScrollTop:"+beforeSetBodyElemScrollTop);
+            console.log("nicolasli,setHtmlElemScrollTop,bodyElement.scrollTop = 0;");
+            bodyElement.scrollTop = 0;
+            var afterSetBodyElemScrollTop = bodyElement.scrollTop;
+            console.log("nicolasli,afterSetBodyElemScrollTop:"+afterSetBodyElemScrollTop);
         }
     </script>
 </body>
