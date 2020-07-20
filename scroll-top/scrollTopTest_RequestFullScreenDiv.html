@@ -9334,8 +9334,21 @@
             //if (elem.requestFullscreen) {
             var beforeFullScreenBodyTop = bodyElement.scrollTop;
             console.log("nicolasli,beforeFullScreenBodyTop:"+beforeFullScreenBodyTop);  
-            console.log("nicolasli,requestFullscreen()");  
-            lastEmbedVideoElem.requestFullscreen();
+            // console.log("nicolasli,requestFullscreen()");  
+            if (lastEmbedVideoElem.requestFullscreen) {
+                console.log("lastEmbedVideoElem.requestFullscreen();");
+                lastEmbedVideoElem.requestFullscreen();
+            } else if (lastEmbedVideoElem.mozRequestFullScreen) {
+                console.log("lastEmbedVideoElem.mozRequestFullScreen();");
+                lastEmbedVideoElem.mozRequestFullScreen();
+            } else if (lastEmbedVideoElem.webkitRequestFullscreen) {
+                console.log("lastEmbedVideoElem.webkitRequestFullscreen();");
+                lastEmbedVideoElem.webkitRequestFullscreen();
+            } else if (lastEmbedVideoElem.msRequestFullscreen) {
+                console.log("lastEmbedVideoElem.msRequestFullscreen();");
+                lastEmbedVideoElem.msRequestFullscreen();
+            }
+            // lastEmbedVideoElem.requestFullscreen();
             var afterFullScreenBodyTop = bodyElement.scrollTop;
             console.log("nicolasli,afterFullScreenBodyTop:"+afterFullScreenBodyTop);
            
