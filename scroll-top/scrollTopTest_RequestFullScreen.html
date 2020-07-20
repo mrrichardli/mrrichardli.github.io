@@ -9379,7 +9379,22 @@
                 var beforeExitFullScreenBodyTop = bodyElement.scrollTop;
                 console.log("nicolasli,beforeExitFullScreenBodyTop:"+beforeExitFullScreenBodyTop);
                 console.log("nicolasli,document.exitFullScreen();");
-                document.exitFullscreen();
+                // document.exitFullscreen();
+
+                if(document.exitFullScreen) {
+                    console.log("document.exitFullScreen();");
+                     document.exitFullScreen();
+                } else if(document.mozCancelFullScreen) {
+                    console.log("document.mozCancelFullScreen();");
+                    document.mozCancelFullScreen();
+                } else if(document.webkitExitFullscreen) {
+                    console.log("document.webkitExitFullscreen();");
+                    document.webkitExitFullscreen();
+                } else if(element.msExitFullscreen) {
+                    console.log("element.msExitFullscreen();");
+                    element.msExitFullscreen();
+               }
+
                 var afterExitFullScreenBodyTop = bodyElement.scrollTop;
                 console.log("nicolasli,afterExitFullScreenBodyTop:"+afterExitFullScreenBodyTop);
             }, 3000);
