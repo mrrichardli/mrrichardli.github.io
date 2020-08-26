@@ -9397,6 +9397,26 @@
 
                 var afterExitFullScreenBodyTop = bodyElement.scrollTop;
                 console.log("nicolasli,afterExitFullScreenBodyTop:"+afterExitFullScreenBodyTop);
+
+               window.setTimeout(function(){
+                    var afterExitFullScreenBodyTop100 = bodyElement.scrollTop;
+                    console.log("nicolasli,after 100 ms exit FullScreen, bodyScrollTop:"+afterExitFullScreenBodyTop100);
+               },100);
+
+               window.setTimeout(function(){
+                    var afterExitFullScreenBodyTop1000 = bodyElement.scrollTop;
+                    console.log("nicolasli,after 1000 ms exit FullScreen, bodyScrollTop:"+afterExitFullScreenBodyTop1000);
+               },1000);
+
+               window.setTimeout(function(){
+                    var afterExitFullScreenBodyTop2000 = bodyElement.scrollTop;
+                    console.log("nicolasli,after 2000 ms exit FullScreen, bodyScrollTop:"+afterExitFullScreenBodyTop2000);
+               },2000);
+
+               window.setTimeout(function(){
+                    var afterExitFullScreenBodyTop3000 = bodyElement.scrollTop;
+                    console.log("nicolasli,after 3000 ms exit FullScreen, bodyScrollTop:"+afterExitFullScreenBodyTop3000);
+               },3000);
             }, 3000);
 
             //} else if (elem.mozRequestFullScreen) { /* Firefox */
