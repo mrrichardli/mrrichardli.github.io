@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>经理级以下述职人员随机排序</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<h2 style="text-align:center;">经理级以下述职人员随机排序</h2>
+<div style="text-align:center;">
+<input type="button" value="随机排序" onclick="randomSort()"/>
+<input type="button" value="清空" onclick="dataClear()"/>
+</div>
+<br/>
+<br/>
+<div style="text-align:center;">
+经理级以下述职人员随机排序结果如下 
+</div>
+<br/>
+
+<hr>
+<dvi id="show" style="text-align:center;"></span>
+<br/>
+<script>
+function dataClear(){
+    document.getElementById("show").innerHTML = "";
+}
+
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function randomSort(){
+    var show_elem = document.getElementById("show");
+    var candidates = [];
+    candidates.push("徐英辉");
+    candidates.push("杨忠岩");
+    candidates.push("石红红");
+    candidates.push("张伟俊");
+    candidates.push("佟彤");
+    candidates.push("余怡莎");
+    candidates.push("李铭啸");
+    candidates.push("韩玲");
+    candidates.push("刘小飞");
+    candidates.push("郝兴燕");
+    candidates.push("吉梦雨");
+    candidates.push("王伊波");
+    candidates.push("耿浩浩");
+    candidates.push("曹鹏浩");
+    candidates.push("陈静");
+    candidates.push("霍秀娟");
+    candidates.push("张丹娜");
+    candidates.push("冀默");
+    candidates.push("刘柏然");
+    candidates.push("王校龙");
+    candidates.push("陈美瑛");
+    candidates.push("邢士森");
+    candidates.push("周丹丹");
+    candidates.push("张颖");
+    candidates.push("张馨");
+    candidates.push("王旭");
+    candidates.push("贾秋颖");
+    candidates.push("孔超");
+    candidates.push("李览博");
+    //随机挑选次数
+    var length = candidates.length;
+    for(var i = 0; i < length; i++){
+        var idx = getRndInteger(0, candidates.length - 1);
+        var candidate_name = candidates[idx];
+        candidates.splice(idx,1);
+        
+        var candidate_elem = document.createElement("div");
+        candidate_elem.innerText = candidate_name;
+
+        show_elem.appendChild(candidate_elem);
+        // sp.innerHTML = sp.innerHTML + "  "+candidate_name+"<br/>";
+    }
+    var split_bar = document.createElement("div");
+    split_bar.innerText = "----------------------------------------------";
+    show_elem.appendChild(split_bar);
+}
+</script>
+</body>
+</html>
