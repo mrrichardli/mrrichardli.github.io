@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>述职人员随机排序</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<div style="text-align:center;">
+<input type="button" value="随机排序" onclick="randomSort()"/>
+<input type="button" value="清空" onclick="dataClear()"/>
+</div>
+<br/>
+<br/>
+<div style="text-align:center;">
+述职人员随机排序结果如下 
+</div>
+<br/>
+
+<hr>
+<dvi id="show" style="text-align:center;"></span>
+<br/>
+<script>
+function dataClear(){
+    document.getElementById("show").innerHTML = "";
+}
+
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function randomSort(){
+    var show_elem = document.getElementById("show");
+    var candidates = [];
+    candidates.push("杜文");
+    candidates.push("王亮");
+    candidates.push("赵宁");
+    candidates.push("梁明");
+    candidates.push("刘通");
+    candidates.push("武文竹");
+    candidates.push("丁鸿超");
+    candidates.push("陈玉洁");
+    candidates.push("张静");
+    candidates.push("陈君雪");
+    candidates.push("银盈");
+    candidates.push("张静娴");
+    candidates.push("王爱静");
+    candidates.push("张斌");
+    candidates.push("杨欣");
+    candidates.push("邹宇");
+    candidates.push("曲元鹏");
+    candidates.push("孙帅");
+    candidates.push("严添乐");
+    candidates.push("王婧");
+    //随机挑选次数
+    var length = candidates.length;
+    for(var i = 0; i < length; i++){
+        var idx = getRndInteger(0, candidates.length - 1);
+        var candidate_name = candidates[idx];
+        candidates.splice(idx,1);
+        
+        var candidate_elem = document.createElement("div");
+        candidate_elem.innerText = candidate_name;
+
+        show_elem.appendChild(candidate_elem);
+        // sp.innerHTML = sp.innerHTML + "  "+candidate_name+"<br/>";
+    }
+    var split_bar = document.createElement("div");
+    split_bar.innerText = "----------------------------------------------";
+    show_elem.appendChild(split_bar);
+}
+</script>
+</body>
+</html>
