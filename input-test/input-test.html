@@ -1,5 +1,9 @@
 <label for="avatar">Choose a profile picture:</label>
-
+<script>
+    function onfilechange(){
+           console.log("nicolasli, this.value:")
+    }   
+</script>
 <input type="file"
-       id="avatar" name="avatar"
-       accept="image/png, image/jpeg">
+       id="file_head" name="file_head"
+       accept="image/*" multiple='multiple' class="file-btn" onchange = "">
