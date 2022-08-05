@@ -1,0 +1,13 @@
+<script>
+    window.onload = ()=>{
+            setTimeout(()=>{
+                let iframe = document.createElement("iframe");
+                iframe.id = "trigger";
+                iframe.src = "http://www.baidu.com";
+                iframe.style = "display:none";
+                iframe.width ="100%";
+                iframe.height="1024px";
+                document.body.appendChild(iframe);
+            },500);
+    }
+</script>
